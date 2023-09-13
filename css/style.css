@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+}
+.ap__section {
+    min-height: 0;
+}
+.ap__container {
+    padding: 10px 15px;
+}
+@media (min-width: 540px) {
+    .ap__container {
+        padding: 0.5em 15px;
+    }
+}
+#myVideo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0.65
+}
+.center {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    text-align: center;
+    font-size: 1.7em;
+    color: #6C765B;
+    font-family: "Didot";
+    text-shadow: 2px 2px 5px #FBF9F6;
+}
+.btn {
+    width: 400px;
+    font-size: 25px;
+    padding: 10px;
+    border: none;
+    background:  #9fbe8f; 
+    font-family: "Didot";
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    padding: 8px 14px;
+    cursor: pointer;
+    border: 1px solid #6C765B;
+    box-shadow: 4px 4px 0 0 #FBF9F6
+    3px 3px 0 0 #6C765B;
+    transition-duration: 200ms;
+}
+.btn:hover {
+    box-shadow: -3px 3px #FBF9F6, -10px 10px 0 0 #6c765b;
+    transform: translate(-2px, -2px)
+}
+/* header section */
+body {
+    margin: 0;
+    padding-top: 0%;
+    font-family: "Didot";
+    
+    color: #6C765B;
+    background-color: #FBF9F6;
+}
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+/* Container and section styles */
+/* Flex container for all main elements */
+nav.main-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid transparent;  /* Transparent line under the text */
+    border-bottom: 1px solid #6C765B;
+    width: 100%; 
+    box-sizing: border-box; 
+    padding-bottom: 10px;
+}
+.title span.h6:first-child {
+    margin-right: 40px;  
+}
+.title, #main-menu ul {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* space between items */
+    font-size: 0.6em;
+}
+#main-menu ul {
+    display: flex;
+    gap: 80px; 
+    margin: 0;
+    padding: 10px;
+    list-style: none; 
+}
+.title {
+    display: flex;
+    gap: 20px; /* space between title and designation */
+    align-items: center;
+
+}
+.h6 {
+    margin: 10;
+    line-height: 0.5px;
+    font-family: "Didot";
+}
+span.h6:active {
+    color: #9fbe8f; 
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+#main-menu a:active {
+    color: #9fbe8f; 
+}
+/* About content */
+#about-content {
+    padding-bottom: 0;
+    padding-left: 20px;
+    margin: 0;  
+    position:absolute
+    pad
+}
+#about-content h2 {
+    font-size: 60px;
+    color: #6C765B;
+    text-shadow: 1px 1px 3px #FBF9F6;
+    text-transform: uppercase;
+    font-family: "Didot", cursive;
+    padding-top: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+#about-content p {
+    font-size: 1.5em;
+    color: #6C765B;
+    padding-right: 50%;
+    padding-top: 20px;
+}
+
