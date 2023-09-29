@@ -34,26 +34,28 @@ body {
     font-family: "Didot";
     text-shadow: 2px 2px 5px #FBF9F6;
 }
+h1 {
+    line-height: 1.7;
+    margin-top: 10px;
+}
 .btn {
     width: 400px;
     font-size: 25px;
-    padding: 10px;
-    border: none;
     background:  #9fbe8f; 
     font-family: "Didot";
     color: #fff;
     border-radius: 50px;
-    text-align: center;
     padding: 8px 14px;
     cursor: pointer;
     border: 1px solid #6C765B;
     box-shadow: 4px 4px 0 0 #FBF9F6
     3px 3px 0 0 #6C765B;
     transition-duration: 200ms;
+    margin-top: 65px;
 }
 .btn:hover {
-    box-shadow: -3px 3px #FBF9F6, -10px 10px 0 0 #6c765b;
-    transform: translate(-2px, -2px)
+    box-shadow: -5px 5px 0 0 #6C765B;
+    transform: translate(-1px, -1px);
 }
 /* header section */
 body {
@@ -121,25 +123,68 @@ a {
     padding-bottom: 0;
     padding-left: 20px;
     margin: 0;  
-    position:absolute
-    pad
+    position:absolute;
 }
-#about-content h2 {
-    font-size: 60px;
+#about-content .overlay-container {
+    font-size: 40px;
     color: #6C765B;
     text-shadow: 1px 1px 3px #FBF9F6;
     text-transform: uppercase;
-    font-family: "Didot", cursive;
     padding-top: 10px;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
+    position: relative;
+    font-family: "Didot";
+}
+.main-text {
+    z-index: 2;
+    position: relative;
+}
+@font-face {
+    font-family: 'custom'; 
+    src: url('fonts/custom.ttf') format('truetype'); 
+}
+.overlay-text {
+    font-family: 'custom', "Didot",; 
+    text-transform: lowercase;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.4;
+    font-style: italic;
+}
+.about-wrapper {
+    display: flex;
+    align-items: flex-start; /* This aligns the children (image and content) to the top */
+}
+img.responsive {
+   width: 50%;
+   max-width: 300px;
+   height: auto;
+   margin: 20px auto; /* Centering the image and giving space around it */
+   padding: 15px; /* Giving space for the white frame */
+   padding-bottom: 50px;
+   background-color: #ffffff; /* White background to simulate the Polaroid frame */
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* A slight shadow for a 3D effect */
+   border-radius: 5px; /* Optional: rounded corners */
 }
 #about-content p {
-    font-size: 1.5em;
+    font-size: 1.1em;
     color: #6C765B;
     padding-right: 50%;
     padding-top: 20px;
+    width: 40%; 
 }
-
+.about_2 {
+    padding-left: 100%;
+    margin: auto;
+    position: inherit;
+    width: 40%; 
+}
+.about_4 {
+    padding-left: 20em;
+    width: 40%; 
+}
