@@ -1,9 +1,23 @@
+/* font word */
 @font-face {
     font-family: 'custom'; 
     src: url('fonts/custom.ttf') format('truetype'); 
 }
+@font-face {
+    font-family: 'courier';
+    src: url('fonts/courier2.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'migra';
+    src: url('fonts/Migra.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'tusker';
+    src: url('fonts/tusker4.ttf') format('opentype');
+}
 body {
     margin: 0;
+    height: 100%;
 }
 .ap__section {
     min-height: 0;
@@ -28,45 +42,41 @@ body {
 }
 .center {
     position: absolute;
-    top: 45%;
+    top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     font-size: 1.7em;
     color: #6C765B;
-    font-family: "Didot";
+    font-family: "";
     text-shadow: 2px 2px 5px #FBF9F6;
-}
-h1 {
-    line-height: 1.7;
-    margin-top: 10px;
+    line-height: 80px;
 }
 .btn {
     width: 400px;
     font-size: 25px;
-    background:  #9fbe8f; 
     font-family: "Didot";
     color: #fff;
     border-radius: 50px;
     padding: 8px 14px;
     cursor: pointer;
-    border: 1px solid #6C765B;
-    box-shadow: 4px 4px 0 0 #FBF9F6
-    3px 3px 0 0 #6C765B;
+    border: 2px solid transparent;
     transition-duration: 200ms;
-    margin-top: 65px;
+    margin-top: 60px;
+    background: rgba(159, 190, 143, 0.9);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
 }
 .btn:hover {
     box-shadow: -5px 5px 0 0 #6C765B;
     transform: translate(-1px, -1px);
+    background: rgba(159, 190, 143, 0.75);
 }
 /* header section */
 body {
     margin: 0;
     padding-top: 0%;
     font-family: "Didot";
-    
     color: #6C765B;
     background-color: #FBF9F6;
 }
@@ -75,15 +85,19 @@ h1, h2, h3, h4, h5, h6, p {
 }
 /* Container and section styles */
 /* Flex container for all main elements */
+.scroller {
+    opacity: 0;
+}
 nav.main-navigation {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid transparent;  /* Transparent line under the text */
-    border-bottom: 1px solid #6C765B;
     width: 100%; 
+    top: 0;
+    position: sticky;
     box-sizing: border-box; 
     padding-bottom: 10px;
+    background: transparent;
 }
 .title span.h6:first-child {
     margin-right: 40px;  
@@ -110,7 +124,7 @@ nav.main-navigation {
 .h6 {
     margin: 10;
     line-height: 0.5px;
-    font-family: "Didot";
+    font-family: "didot";
 }
 span.h6:active {
     color: #9fbe8f; 
@@ -128,19 +142,15 @@ a {
     padding-left: 20px;
     margin: 0;  
     position:absolute;
+    display: block;
+    justify-content: center;
 }
-#about-content .overlay-container {
-    font-size: 40px;
+.overlay-container {
+    font-size: 35px;
     color: #6C765B;
     text-shadow: 1px 1px 3px #FBF9F6;
     text-transform: uppercase;
-    padding-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    position: relative;
-    font-family: "Didot";
+    font-family: "Didot";    
 }
 .main-text {
     z-index: 2;
@@ -150,41 +160,78 @@ a {
     font-family: 'custom'; 
     text-transform: lowercase;
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+    left: 50%;
+    transform: translate(-50%);  /* Centered based on its own width */
+    padding-top: 3px;
     opacity: 0.4;
+    letter-spacing: 11px;
     font-style: italic;
+    text-indent: 15px;
 }
-.about-wrapper {
+/* Basic styles */
+#about-content {
+    position: absolute;
+    align-self: flex-end;
+    margin-right: 5%;
+}
+.main-wrapper {
     display: flex;
-    align-items: flex-start; /* This aligns the children (image and content) to the top */
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: center;
 }
-img.responsive {
-   width: 50%;
-   max-width: 300px;
-   height: auto;
-   margin: 20px auto; /* Centering the image and giving space around it */
-   padding: 15px; /* Giving space for the white frame */
-   padding-bottom: 50px;
-   background-color: #ffffff; /* White background to simulate the Polaroid frame */
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* A slight shadow for a 3D effect */
-   border-radius: 5px; /* Optional: rounded corners */
+.toptitle-container { 
+    position: absolute;  
+    bottom: 10px;
+    font-size: 160px;
 }
-#about-content p {
-    font-size: 1.1em;
-    color: #6C765B;
-    padding-right: 50%;
-    padding-top: 20px;
-    width: 40%; 
+.toptitle-element {
+    font-size: 30px;
+    display: block;
+    font-family: 'migra';
+    color: #90a58a;
+    line-height: 1.3;
+    margin-bottom: -15px;
 }
-.about_2 {
-    padding-left: 100%;
-    margin: auto;
-    position: inherit;
-    width: 40%; 
+.split {
+    line-height: 1.3;
 }
-.about_4 {
-    padding-left: 20em;
-    width: 40%; 
+.line_1 {
+    font-size: 180px; 
+    text-transform: uppercase;
+    margin-top: 0px;
+    margin-bottom: -50px;
+    font-family: 'tusker';
+    letter-spacing: 3px;
 }
+.line_2 {
+    font-size: 180px;
+    text-transform: uppercase;
+    font-family: 'tusker';
+    letter-spacing: 3px;
+    margin-bottom: 80px;
+}
+.content-container {
+    
+}
+.line_3 {
+    text-align: left;
+    justify-content: right;
+    padding-left: 53%;
+    padding-right: 15px;
+    font-size: 43px;
+    padding-bottom: 100px;
+}
+.line_4 {
+    text-align: left;
+    display: flex;
+    justify-content: right;
+    padding-left: 53%;
+    font-size: 27px;
+    padding-right: 15px;
+    
+   
+    
+}
+
+
