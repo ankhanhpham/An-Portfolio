@@ -80,8 +80,9 @@
     <button class="myButton">Contact Me</button>
   </div>
   <!-- Core Analytics Skills Section -->
+  <!-- Core Analytics Skills Section -->
   <div class="skills-section">
-    <h2>Core Analytics Skills</h2>
+    <h2>Core Technical Skills</h2>
     <p class="skills-subtitle">
         Passionate about insightful data interpretation, I am refining analytical skills.
         My goal is to excel as a data analyst, <br/> adept at turning complex data into captivating stories.
@@ -90,53 +91,80 @@
         <div class="skills-column">
             <!-- Left column skills -->
             <div class="skill">
-                <label for="sql">SQL</label>
+                <label for="sql" style="padding-bottom: 10px;">SQL</label>
                 <div class="progress-bar">
-                    <div class="progress" id="sql" style="width: 30%;"></div>
+                    <div class="progress" id="sql" data-width=45% style="width: 0%;"></div>
                 </div>
-                <span class="percentage">30%</span>
+                <span class="percentage">45%</span>
             </div>
             <div class="skill">
-                <label for="python">Python</label>
+                <label for="python" style="padding-bottom: 10px;">Python</label>
                 <div class="progress-bar">
-                    <div class="progress" id="python" style="width: 20%;"></div>
+                    <div class="progress" id="python" data-width=35% style="width: 0%;"></div>
                 </div>
-                <span class="percentage">20%</span>
+                <span class="percentage">35%</span>
             </div>
             <div class="skill">
-                <label for="data-viz">Data Visualization (Tableau)</label>
+                <label for="data-viz" style="padding-bottom: 10px;">Data Visualization (Tableau)</label>
                 <div class="progress-bar">
-                    <div class="progress" id="data-viz" style="width: 30%;"></div>
+                    <div class="progress" id="data-viz" data-width=50% style="width: 0%;"></div>
                 </div>
-                <span class="percentage">30%</span>
+                <span class="percentage">50%</span>
             </div>
         </div>
         <div class="skills-column">
             <!-- Right column skills -->
             <div class="skill">
-                <label for="research">Research</label>
+                <label for="data-mining" style="padding-bottom: 10px;">Data Mining (Knime, Weka)</label>
                 <div class="progress-bar">
-                    <div class="progress" id="research" style="width: 60%;"></div>
+                    <div class="progress" id="data-mining" data-width=20% style="width: 0%;"></div>
                 </div>
-                <span class="percentage">60%</span>
+                <span class="percentage">20%</span>
             </div>
             <div class="skill">
-                <label for="data-cleaning">Data Cleaning</label>
+                <label for="Excel" style="padding-bottom: 10px;">Excel Spreadsheet</label>
                 <div class="progress-bar">
-                    <div class="progress" id="data-cleaning" style="width: 40%;"></div>
+                    <div class="progress" id="Excel" data-width=65% style="width: 0%;"></div>
                 </div>
-                <span class="percentage">40%</span>
+                <span class="percentage">65%</span>
             </div>
             <div class="skill">
-                <label for="web-analytics">Web Analytics</label>
+                <label for="web-design" style="padding-bottom: 10px;">HTML, CSS, JS</label>
                 <div class="progress-bar">
-                    <div class="progress" id="web-analytics" style="width: 40%;"></div>
+                    <div class="progress" id="web-design" data-width=60% style="width: 0%;"></div>
                 </div>
-                <span class="percentage highlight">40%</span>
+                <span class="percentage highlight">60%</span>
             </div>
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const skillsContainer = document.querySelector('.skills-container');
+        const progressBars = document.querySelectorAll('.progress');
+    
+        const setProgressWidth = (inView) => {
+            progressBars.forEach(bar => {
+                bar.style.transition = 'width 3s ease-out';
+                bar.style.width = inView ? bar.getAttribute('data-width') : '0%';
+            });
+        };
+    
+        const checkSkillsSectionInView = () => {
+            const rect = skillsContainer.getBoundingClientRect();
+            const isInView = rect.top < window.innerHeight && rect.bottom >= 0;
+            setProgressWidth(isInView);
+        };
+    
+        // Add scroll and resize event listeners
+        window.addEventListener('scroll', checkSkillsSectionInView);
+        window.addEventListener('resize', checkSkillsSectionInView);
+    
+        // Initial check
+        checkSkillsSectionInView();
+    });
+</script>      
+    
 <!-- End of Core Analytics Skills Section -->
 
 </body>

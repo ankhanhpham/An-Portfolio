@@ -160,9 +160,7 @@ a {
 }
 /* About content */
 #about-content {
-    padding-bottom: 0;
-    padding-left: 20px;
-    margin: 0;  
+    padding-bottom: 0;  
     position:absolute;
     display: block;
     justify-content: center;
@@ -205,6 +203,7 @@ a {
     margin-top: 280px;
     font-size: 160px;
     z-index: 1;
+    padding-left: 10px;
 }
 .toptitle-element {
     font-size: 30px;
@@ -236,12 +235,10 @@ a {
     margin-bottom: 80px;
 }
 .content-container {
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
     flex-direction: column;
     padding-top: 6%;
     padding-right: 25px;
+    background-color: #FBF9F6;
 }
 .line_3 {
     text-align: right;
@@ -265,6 +262,8 @@ a {
     display: flex;
     justify-content: space-between;
     padding-left: 50%;
+    background-color: #FBF9F6;
+    padding-bottom: 90px;
 }
 @keyframes gradient {
     0% {background-position: 0% 0;}
@@ -304,13 +303,16 @@ body.fade-out {
     from { opacity: 1; }
     to { opacity: 0; }
 }
+
+/* Technical Section*/
+
 .skills-section {
     background-color: #7B8069;
     color: #fff;
     text-align: center;
     padding-top: 50px;
     padding-bottom: 200px;
-    margin-top: 95px;
+    padding: 3em;
 }
 h2 {
     font-size: 40px;
@@ -339,36 +341,48 @@ h2 {
     flex-direction: column;
     flex-basis: 50%; /* Split the width evenly */
 }
+
 .skill {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;
+    padding: 10px;
+    font-family: "mont-bold";
+    font-size: 20px;
 }
 
-.label {
-    text-align: left;
-    width: 100%;
-    margin-bottom: 5px;
+.skill:hover {
+    transform: translateY(-5px); /* Slight raise effect on hover */
 }
-
-.progress-wrapper {
+.progress-bar {
+    background-color: #B5B7A4; 
+    border-radius: 20px; /* Rounded corners */
+    width: 100%; 
+    height: 10px; 
+    position: relative;
+    align-items: center;
+    display: flex;
+}
+.progress {
+    background-color: #ffff; 
+    height: 13px;
+    border-radius: 15px;
+    width: 0; /* Progress bar width animation */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
-    width: 100%;
-}
-
-.progress-bar {
-    background-color: #444;
-    flex-grow: 1;
-    height: 20px;
-}
-
-.progress {
-    background-color: #ccc;
-    height: 100%;
 }
 
 .percentage {
-    margin-left: 10px; /* Adds spacing between progress bar and percentage */
+    text-align: right;
+    font-weight: bold;
+    margin-top: 10px; /* Adds spacing between progress bar and percentage */
+    color: #fff; 
+    margin-left: auto; 
+    padding-right: 5px; 
 }
+
+
